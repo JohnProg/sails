@@ -53,7 +53,7 @@ describe('router :: ', function() {
 			it('should respond to get request to :controller with the template at views/:controller/index.ejs', function(done) {
 
 				// Empty router file
-				
+
 				httpHelper.testRoute('get', 'viewTest', function(err, response) {
 					if (err) return done(new Error(err));
 
@@ -86,7 +86,7 @@ describe('router :: ', function() {
 
         httpHelper.testRoute('get', 'viewTest/viewOptionsOverride', function(err, response) {
           if (err) return done(new Error(err));
-          assert(response.body.indexOf('!baz!') !== -1);
+          assert(response.body.indexOf('!baz!') !== -1, response.body);
           done();
         });
       });
